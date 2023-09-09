@@ -5,17 +5,17 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Wheel;
+import frc.robot.subsystems.Intake;
 
-public class SetWheelOutput extends CommandBase {
+public class SetIntakeOutput extends CommandBase {
   /** Creates a new SetWheelOutput. */
-  private Wheel m_wheel;
+  private Intake m_intake;
   private double m_output;
 
-  public SetWheelOutput(Wheel wheel, double output) {
+  public SetIntakeOutput(Intake wheel, double output) {
     // Use addRequirements() here to declare subsystem dependencies.
-    m_wheel = wheel;
-    addRequirements(m_wheel);
+    m_intake = wheel;
+    addRequirements(m_intake);
   }
 
   // Called when the command is initially scheduled.
@@ -25,7 +25,7 @@ public class SetWheelOutput extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_wheel.setPercentOutput(m_output);
+    m_intake.setPercentOutput(m_output);
   }
 
   // Called once the command ends or is interrupted.
